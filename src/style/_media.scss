@@ -1,0 +1,55 @@
+// Media queries for mobile
+
+$mobile: (
+        small: 320px,
+        medium: 410px,
+        large: 411px
+);
+
+$mobile-s: '(max-width: #{map-get($mobile, small)})';
+$mobile-md: '(min-width: #{map-get($mobile, small) + 1}) and (max-width: #{map-get($mobile, medium)})';
+$mobile-xl: '(min-width: #{map-get($mobile, large)}) and (max-width: 768px)';
+
+$mobile-all:  '(max-width: 768px)';
+
+@mixin landscape {
+  @media screen and (orientation: landscape) {
+    @content;
+  }
+}
+
+//Media queries for desktop
+
+$desktop: (
+        small: 1024px,
+        medium: 1355px,
+        large: 1850px
+);
+
+$desktop-s: '(min-width: #{map-get($desktop, small) + 1}) and (max-width: #{map-get($desktop, medium)})';
+$desktop-md: '(min-width: #{map-get($desktop, medium) + 1}) and (max-width: #{map-get($desktop, large)})';
+$desktop-xl: '(min-width: #{map-get($desktop, large) + 1})';
+
+// Media queries for tablet
+
+$tablet: (
+        medium: 768px
+);
+
+$tablet-md: '(min-width: #{map-get($tablet, medium)}) and (max-width: #{map-get($desktop, small)})';
+
+// Media queries for tablet and bigger
+
+$tablet-up: '(min-width: #{map-get($tablet, medium)})';
+
+// Media queries for all desktops
+
+$desktop-up: '(min-width: #{map-get($desktop, small) + 1 })';
+
+// Shared
+
+@mixin media($media) {
+  @media screen and #{$media} {
+    @content;
+  }
+}

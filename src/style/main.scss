@@ -1,3 +1,62 @@
-.test {
+@import 'normalize.css';
+@import 'media';
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  font-family: 'Raleway', sans-serif;
+  font-size: 12px;
+  @include media($mobile-md) {
+    font-size: 14px;
+  }
+  @include media($mobile-xl) {
+    font-size: 16px;
+  }
+  @include media($tablet-md) {
+    font-size: 18px;
+  }
+  @include media($desktop-s) {
+    font-size: 20px;
+  }
+  @include media($desktop-md) {
+    font-size: 22px;
+  }
+  @include media($desktop-xl) {
+    font-size: 24px;
+  }
+}
+
+h2, p {
+  text-align: center;
+}
+
+.board {
+    background-image: url(/assets/tlo.jpg);
+    background-size: 100%;
+    width: 20rem;
+    height: 20rem;
+    margin: 1rem auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @include media($tablet-up) {
+      width: 600px;
+      height: 600px;
+    }
+}
+
+.broccoli {
   cursor: pointer;
+  width: 14rem;
+  @include media($tablet-up) {
+    height: 500px;
+    width: unset;
+  }
+}
+
+.broccoli:hover {
+    transform: rotateZ(-1180deg);
+    transition:5.2s ease all;
 }
