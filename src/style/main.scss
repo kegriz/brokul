@@ -50,7 +50,7 @@ h2 {
 }
 
 .board {
-    background-image: url(/assets/tlo.jpg);
+    background-image: url(../assets/tlo.jpg);
     background-size: 100%;
     width: 20rem;
     height: 20rem;
@@ -66,6 +66,13 @@ h2 {
 }
 
 .broccoli {
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+   -khtml-user-select: none; /* Konqueror HTML */
+     -moz-user-select: none; /* Firefox */
+      -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
     cursor: pointer;
     width: 14rem;
     @include media($tablet-up) {
